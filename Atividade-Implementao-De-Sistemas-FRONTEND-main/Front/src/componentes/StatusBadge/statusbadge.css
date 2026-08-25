@@ -1,0 +1,108 @@
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+.status-badge svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+}
+
+/* ABERTO */
+
+.status-aberto {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+/* EM ATENDIMENTO */
+
+.status-atendimento {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.status-atendimento svg {
+    animation: status-loading 1.5s linear infinite;
+}
+
+/* PENDENTE */
+
+.status-pendente {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+
+/* RESOLVIDO */
+
+.status-resolvido {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+/* FECHADO */
+
+.status-fechado {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+/* CANCELADO */
+
+.status-cancelado {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* PADRÃO */
+
+.status-padrao {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes status-loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .status-badge {
+        padding: 5px 9px;
+
+        font-size: 11px;
+    }
+
+    .status-badge svg {
+        width: 13px;
+        height: 13px;
+    }
+}
+

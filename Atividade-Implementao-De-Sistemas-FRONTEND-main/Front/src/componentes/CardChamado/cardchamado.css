@@ -1,0 +1,256 @@
+
+.card-chamado {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+.card-chamado:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* TOPO */
+
+.card-chamado-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.card-chamado-id {
+    color: #64748b;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* PRIORIDADE */
+
+.card-prioridade {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-prioridade svg {
+    width: 14px;
+    height: 14px;
+}
+
+.card-prioridade.baixa {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.card-prioridade.media {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.card-prioridade.alta {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.card-prioridade.critica {
+    background: #7f1d1d;
+    color: #ffffff;
+}
+
+/* CONTEÚDO */
+
+.card-chamado-conteudo h3 {
+    margin: 0 0 8px;
+
+    color: #111827;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card-descricao {
+    margin: 0 0 18px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+/* INFORMAÇÕES */
+
+.card-informacoes {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.card-info svg {
+    color: #475569;
+}
+
+/* RODAPÉ DO CARD */
+
+.card-chamado-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid #f1f5f9;
+}
+
+/* STATUS */
+
+.card-status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-status.aberto {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.card-status.em-atendimento {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.card-status.resolvido {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.card-status.fechado {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+/* LINK */
+
+.card-detalhes {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.card-detalhes:hover {
+    color: #1d4ed8;
+}
+
+.card-detalhes svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    .card-chamado {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .card-chamado-topo {
+        margin-bottom: 14px;
+    }
+
+    .card-chamado-conteudo h3 {
+        font-size: 16px;
+    }
+
+    .card-descricao {
+        font-size: 13px;
+    }
+
+    .card-informacoes {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card-chamado-rodape {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .card-detalhes {
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 9px;
+
+        border: 1px solid #dbeafe;
+        border-radius: 8px;
+
+        box-sizing: border-box;
+    }
+}
+
+
