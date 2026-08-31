@@ -1,0 +1,479 @@
+
+.header {
+    width: 100%;
+    height: 72px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    height: 72px;
+
+    margin: 0 auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    box-sizing: border-box;
+}
+
+/* LOGO */
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #111827;
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.logo-text strong {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.logo-text span {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+/* NAVEGAÇÃO */
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-left: auto;
+}
+
+.header-nav a {
+    padding: 9px 13px;
+
+    color: #64748b;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.header-nav a:hover {
+    background: #f1f5f9;
+    color: #2563eb;
+}
+
+/* AÇÕES */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* NOTIFICAÇÕES */
+
+.header-notification {
+    width: 38px;
+    height: 38px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+
+    color: #475569;
+
+    cursor: pointer;
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+}
+
+.header-notification:hover {
+    background: #f1f5f9;
+}
+
+.header-notification svg {
+    width: 19px;
+    height: 19px;
+}
+
+.notification-badge {
+    position: absolute;
+
+    top: 3px;
+    right: 2px;
+
+    min-width: 15px;
+    height: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 3px;
+
+    background: #ef4444;
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    box-sizing: border-box;
+}
+
+/* USUÁRIO */
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding-left: 15px;
+
+    border-left: 1px solid #e5e7eb;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    border-radius: 50%;
+}
+
+.user-avatar svg {
+    width: 17px;
+    height: 17px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-info strong {
+    color: #1e293b;
+    font-size: 13px;
+}
+
+.user-info span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* SAIR */
+
+.header-logout {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+
+    color: #64748b;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.header-logout:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.header-logout svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* BOTÃO MOBILE */
+
+.menu-button {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+
+    color: #334155;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+}
+
+.menu-button:hover {
+    background: #f1f5f9;
+}
+
+.menu-button svg {
+    width: 23px;
+    height: 23px;
+}
+
+/* MENU MOBILE */
+
+.mobile-menu {
+    display: none;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .header-nav {
+        gap: 2px;
+    }
+
+    .header-nav a {
+        padding: 8px 9px;
+        font-size: 13px;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .header-user {
+        padding-left: 8px;
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 750px) {
+
+    .header {
+        height: 64px;
+    }
+
+    .header-container {
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .header-nav,
+    .header-actions {
+        display: none;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+    }
+
+    .logo-text strong {
+        font-size: 14px;
+    }
+
+    .logo-text span {
+        font-size: 9px;
+    }
+
+    /* MENU */
+
+    .mobile-menu {
+        display: block;
+
+        position: absolute;
+
+        top: 64px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e5e7eb;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+        box-sizing: border-box;
+
+        transform: translateY(-120%);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: 0.25s ease;
+    }
+
+    .mobile-menu-aberto {
+        transform: translateY(0);
+
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .mobile-menu nav a {
+        padding: 13px;
+
+        color: #334155;
+
+        text-decoration: none;
+
+        border-radius: 8px;
+
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .mobile-menu nav a:hover {
+        background: #f1f5f9;
+        color: #2563eb;
+    }
+
+    /* USUÁRIO */
+
+    .mobile-user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        margin-top: 18px;
+        padding-top: 18px;
+
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .mobile-user > div:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .mobile-user strong {
+        color: #1e293b;
+        font-size: 14px;
+    }
+
+    .mobile-user span {
+        color: #64748b;
+        font-size: 12px;
+    }
+
+    /* SAIR */
+
+    .mobile-logout {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        margin-top: 15px;
+        padding: 12px;
+
+        background: #fee2e2;
+        color: #dc2626;
+
+        border: none;
+        border-radius: 8px;
+
+        font-size: 14px;
+        font-weight: 700;
+
+        cursor: pointer;
+    }
+
+    .mobile-logout svg {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+
+    .header-container {
+        padding: 0 14px;
+    }
+
+    .logo-text span {
+        display: none;
+    }
+}
+
