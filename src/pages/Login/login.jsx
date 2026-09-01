@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './login.css';
 
 export default function Login() {
-  const [perfil, setPerfil] = useState(null); // 'cliente' ou 'funcionario'
+  const [perfil, setPerfil] = useState(null);
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -19,9 +19,27 @@ export default function Login() {
     <div className="login-container">
       {/* LADO ESQUERDO - BANNER INFORMATIVO */}
       <div className="login-left-panel">
-        <div className="brand-header">
-          <div className="logo-icon">T</div>
-          <span className="brand-title">TechNexus</span>
+        <div className="brand-header" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="42" height="42" rx="12" fill="url(#techGrad)" />
+            <path d="M21 10L31 15V22C31 28.5 26.5 33.5 21 35C15.5 33.5 11 28.5 11 22V15L21 10Z" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+            <path d="M17 21L20 24L25 18" stroke="#a78bfa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <defs>
+              <linearGradient id="techGrad" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#7c3aed" />
+                <stop offset="1" stopColor="#4c1d95" />
+              </linearGradient>
+            </defs>
+          </svg>
+          
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span style={{ fontSize: '24px', fontWeight: '800', color: '#0f172a', letterSpacing: '-0.5px', lineHeight: '1' }}>
+              Tech<span style={{ color: '#7c3aed' }}>Nexus</span>
+            </span>
+            <span style={{ fontSize: '10px', fontWeight: '700', color: '#64748b', letterSpacing: '1.5px', marginTop: '3px' }}>
+              HELP DESK & TI
+            </span>
+          </div>
         </div>
 
         <div className="left-content">
@@ -33,13 +51,28 @@ export default function Login() {
             Conecte atendimentos, equipamentos e sua equipe na plataforma centralizada TechNexus.
           </p>
 
-          <div className="preview-card">
-            <div className="card-header-bar"></div>
-            <div className="card-sub-bar"></div>
-            <div className="card-grid">
-              <div className="card-box"></div>
-              <div className="card-box"></div>
-              <div className="card-box active"></div>
+          {/* NOVOS CARDS DE MÉTRICAS */}
+          <div style={{ marginTop: '28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+              <div style={{ background: '#ffffff', padding: '14px 10px', borderRadius: '12px', border: '1px solid #e2e8f0', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                <span style={{ display: 'block', fontSize: '18px', fontWeight: '800', color: '#7c3aed' }}>99.8%</span>
+                <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '600' }}>SLA Cumprido</span>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '14px 10px', borderRadius: '12px', border: '1px solid #e2e8f0', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                <span style={{ display: 'block', fontSize: '18px', fontWeight: '800', color: '#0f172a' }}>&lt; 15m</span>
+                <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '600' }}>Resposta Média</span>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '14px 10px', borderRadius: '12px', border: '1px solid #e2e8f0', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                <span style={{ display: 'block', fontSize: '18px', fontWeight: '800', color: '#0f172a' }}>24/7</span>
+                <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '600' }}>Suporte Ativo</span>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#475569', fontWeight: '600', paddingLeft: '4px' }}>
+              <span style={{ height: '8px', width: '8px', backgroundColor: '#22c55e', borderRadius: '50%', display: 'inline-block', boxShadow: '0 0 6px #22c55e' }}></span>
+              Sistemas operando normalmente
             </div>
           </div>
         </div>
@@ -49,7 +82,6 @@ export default function Login() {
       <div className="login-right-panel">
         <div className="right-content">
           {!perfil ? (
-            /* PASSO 1: SELEÇÃO DE PERFIL */
             <div>
               <h2 className="login-title">Como deseja acessar?</h2>
               <p className="login-subtitle">Selecione seu perfil para continuar no TechNexus</p>
@@ -81,7 +113,6 @@ export default function Login() {
               </div>
             </div>
           ) : (
-            /* PASSO 2: FORMULÁRIO DE LOGIN */
             <form onSubmit={handleLogin}>
               <div className="back-header">
                 <button

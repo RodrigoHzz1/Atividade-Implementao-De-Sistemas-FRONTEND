@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./pages/Login/login.css";
+import './pages/Login/login.css';
 
 export default function App() {
   const [perfil, setPerfil] = useState(null);
@@ -78,10 +78,29 @@ export default function App() {
 
   return (
     <div className="login-container">
+      {/* LADO ESQUERDO - BANNER INFORMATIVO */}
       <div className="login-left-panel">
-        <div className="brand-header">
-          <div className="logo-icon">T</div>
-          <span className="brand-title">TechNexus</span>
+        <div className="brand-header" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="42" height="42" rx="12" fill="url(#techGrad)" />
+            <path d="M21 10L31 15V22C31 28.5 26.5 33.5 21 35C15.5 33.5 11 28.5 11 22V15L21 10Z" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+            <path d="M17 21L20 24L25 18" stroke="#a78bfa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <defs>
+              <linearGradient id="techGrad" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#7c3aed" />
+                <stop offset="1" stopColor="#4c1d95" />
+              </linearGradient>
+            </defs>
+          </svg>
+          
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span style={{ fontSize: '24px', fontWeight: '800', color: '#0f172a', letterSpacing: '-0.5px', lineHeight: '1' }}>
+              Tech<span style={{ color: '#7c3aed' }}>Nexus</span>
+            </span>
+            <span style={{ fontSize: '10px', fontWeight: '700', color: '#64748b', letterSpacing: '1.5px', marginTop: '3px' }}>
+              HELP DESK & TI
+            </span>
+          </div>
         </div>
 
         <div className="left-content">
@@ -105,6 +124,7 @@ export default function App() {
         </div>
       </div>
 
+      {/* LADO DIREITO - PERFIL OU FORMULÁRIO */}
       <div className="login-right-panel">
         <div className="right-content">
           {!perfil ? (
