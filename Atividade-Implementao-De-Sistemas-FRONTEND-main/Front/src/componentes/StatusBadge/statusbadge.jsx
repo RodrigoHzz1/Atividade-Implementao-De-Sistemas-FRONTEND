@@ -1,77 +1,53 @@
-
-import {
-    FiCheckCircle,
-    FiClock,
-    FiAlertCircle,
-    FiXCircle,
-    FiLoader
-} from "react-icons/fi";
-
-import "./style.css";
+import React from "react";
+import "./statusbadge.css";
 
 export default function StatusBadge({ status }) {
+  const statusFormatado = status ? status.toLowerCase().trim() : "";
 
-    const statusNormalizado = status
-        ?.toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/\s+/g, "-");
+  const getStatusConfig = () => {
+    switch (statusFormatado) {
+      case "aberto":
+        return { label: "Aberto", className: "status-aberto", icon: "🔵" };
 
-    const statusConfig = {
+      case "em andamento":
+      case "em atendimento":
+      case "atendimento":
+      case "emandamento":
+        return {
+          label: "Em Atendimento",
+          className: "status-atendimento",
+          svgIcon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
+            </svg>
+          ),
+        };
 
-        aberto: {
-            texto: "Aberto",
-            icone: <FiAlertCircle />,
-            classe: "status-aberto"
-        },
+      case "pendente":
+        return { label: "Pendente", className: "status-pendente", icon: "🟣" };
 
-        "em-atendimento": {
-            texto: "Em atendimento",
-            icone: <FiLoader />,
-            classe: "status-atendimento"
-        },
+      case "concluído":
+      case "concluido":
+      case "resolvido":
+        return { label: "Resolvido", className: "status-resolvido", icon: "🟢" };
 
-        pendente: {
-            texto: "Pendente",
-            icone: <FiClock />,
-            classe: "status-pendente"
-        },
+      case "fechado":
+        return { label: "Fechado", className: "status-fechado", icon: "⚪" };
 
-        resolvido: {
-            texto: "Resolvido",
-            icone: <FiCheckCircle />,
-            classe: "status-resolvido"
-        },
+      case "cancelado":
+        return { label: "Cancelado", className: "status-cancelado", icon: "🔴" };
 
-        fechado: {
-            texto: "Fechado",
-            icone: <FiCheckCircle />,
-            classe: "status-fechado"
-        },
+      default:
+        return { label: status || "Padrão", className: "status-padrao", icon: "🔘" };
+    }
+  };
 
-        cancelado: {
-            texto: "Cancelado",
-            icone: <FiXCircle />,
-            classe: "status-cancelado"
-        }
-    };
+  const { label, className, icon, svgIcon } = getStatusConfig();
 
-    const configuracao = statusConfig[statusNormalizado] || {
-        texto: status || "Desconhecido",
-        icone: <FiClock />,
-        classe: "status-padrao"
-    };
-
-    return (
-        <span
-            className={`status-badge ${configuracao.classe}`}
-        >
-            {configuracao.icone}
-
-            <span>
-                {configuracao.texto}
-            </span>
-        </span>
-    );
+  return (
+    <span className={`status-badge ${className}`}>
+      {svgIcon ? svgIcon : <span>{icon}</span>}
+      {label}
+    </span>
+  );
 }
-
