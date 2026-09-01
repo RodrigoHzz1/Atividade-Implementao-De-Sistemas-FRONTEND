@@ -1,42 +1,274 @@
-/* FORÇAR MUDANÇA NA CAIXA INFERIOR ESQUERDA */
-.preview-card {
-  background-color: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
-  border-radius: 16px !important;
-  padding: 20px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 16px !important;
-  min-height: auto !important;
+/* Layout Principal Split (Dark/Light) */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0c10;
+  color: #ffffff;
 }
 
-/* Oculta as barrinhas escuras antigas */
-.card-header-bar,
-.card-sub-bar,
-.card-grid {
-  display: none !important;
+/* Lado Esquerdo - Banner Informativo */
+.login-left-panel {
+  flex: 1;
+  background-color: #f8fafc;
+  color: #0f172a;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Cria o conteúdo visual das métricas direto no CSS */
-.preview-card::before {
-  content: "99.8% SLA • <15m Resposta • 24/7 Ativo";
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #7c3aed;
+  color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.left-content {
+  max-width: 440px;
+  margin: auto 0;
+}
+
+.main-heading {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.purple-text {
   color: #7c3aed;
-  text-align: center;
-  background: #f8fafc;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #f1f5f9;
 }
 
-.preview-card::after {
-  content: "● Sistemas operando normalmente";
+.sub-text {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* Container de Métricas e Status */
+.preview-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Grid de Métricas */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card-box {
+  background-color: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Oculta as antigas barras */
+.card-header-bar,
+.card-sub-bar {
+  display: none;
+}
+
+/* Lado Direito - Seleção de Perfil e Login */
+.login-right-panel {
+  flex: 1;
+  background-color: #0b0c10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.right-content {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff !important;
+}
+
+.login-subtitle {
+  color: #94a3b8 !important;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+/* Botões de Seleção de Perfil */
+.profile-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #16181d;
+  border: 1px solid #27272a;
+  padding: 20px;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.profile-button:hover {
+  border-color: #7c3aed;
+  background-color: #1c1f26;
+  transform: translateY(-2px);
+}
+
+.profile-icon {
+  font-size: 28px;
+}
+
+.profile-title {
   display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.profile-desc {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Form de Login */
+.back-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #7c3aed;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0;
+}
+
+.badge-perfil {
+  background-color: #1e1b4b;
+  color: #a78bfa;
+  padding: 4px 12px;
+  border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
-  color: #16a34a;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #16181d;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #7c3aed;
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  font-size: 13px;
+}
+
+.remember-me {
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #7c3aed;
+  text-decoration: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #7c3aed;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #6d28d9;
+}
+
+.footer-text {
+  margin-top: 40px;
   text-align: center;
+  font-size: 12px;
+  color: #475569;
 }
