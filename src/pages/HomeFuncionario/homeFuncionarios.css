@@ -1,0 +1,246 @@
+.home-container {
+  min-height: 100vh;
+  background-color: #0b0f19;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding-bottom: 40px;
+}
+
+/* HEADER FIXES */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #111827;
+  border-bottom: 1px solid #1e293b;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.brand-logo h2 span {
+  color: #a78bfa;
+}
+
+.user-profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-name-label {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.user-name-label strong {
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  border: 2px solid #a78bfa;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+.tech-avatar {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  border-color: #38bdf8;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+}
+
+/* CONTAINER PRINCIPAL */
+.home-content {
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 0 24px;
+}
+
+/* WELCOME CARD */
+.welcome-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.welcome-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.purple-text {
+  color: #a78bfa;
+}
+
+.welcome-card p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0;
+}
+
+.btn-primary {
+  background-color: #7c3aed;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #6d28d9;
+  transform: translateY(-1px);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* GRADES DE MÓDULOS (DISPOSIÇÃO LADO A LADO) */
+.modules-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Grade do Cliente: 2 colunas lado a lado */
+.cliente-grid .module-card {
+  flex: 1 1 calc(50% - 20px);
+}
+
+/* Grade do Funcionário: 3 colunas lado a lado */
+.funcionario-grid .module-card {
+  flex: 1 1 calc(33.333% - 20px);
+}
+
+/* ESTRUTURA DOS CARTÕES */
+.module-card {
+  box-sizing: border-box;
+  min-width: 260px;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.module-card:hover {
+  border-color: #7c3aed;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.module-card.active-card {
+  border-color: #7c3aed;
+  background-color: #181f30;
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.module-icon {
+  font-size: 22px;
+  background-color: #0f172a;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+}
+
+.module-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #334155;
+  color: #a78bfa;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.status-ok {
+  color: #4ade80;
+}
+
+.status-purple {
+  background-color: #2e1065;
+  color: #c084fc;
+  border: 1px solid #581c87;
+}
+
+.module-body h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.module-body p {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.module-footer {
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a78bfa;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+  .funcionario-grid .module-card,
+  .cliente-grid .module-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 580px) {
+  .funcionario-grid .module-card,
+  .cliente-grid .module-card {
+    flex: 1 1 100%;
+  }
+}
